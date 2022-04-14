@@ -10,7 +10,7 @@ services:
       - rsvpnet
 
   spring:
-    image: shanureddy78/kaiburrserver
+    image: shanureddy78/kaiburrserver:master-7eb4bef
     environment:
       MONGODB_HOST: mongodb
     ports:
