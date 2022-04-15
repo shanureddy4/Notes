@@ -1,11 +1,11 @@
 version: '3'
 services:
   mongodb:
-    image: 'mongo:3.3'
+    image: 'mongo:4.2'
     container_name: "mongo-container"
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=root
+      - MONGO_INITDB_ROOT_USERNAME=shanu
+      - MONGO_INITDB_ROOT_PASSWORD=shanu
     ports:
       - "27017:27017"
     volumes:
@@ -14,12 +14,12 @@ services:
       - rsvpnet
 
   spring:
-    image: shanureddy78/webapikaiburr:master-4931899
+    image: shanureddy78/webapikaiburr:master-29dbb41
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
-      MONGO_INITDB_DATABASE: mongos
-      MONGO_HOST: mongodb
+      - MONGOUSER=shanu
+      - MONGOPASS=shanu
+      - MONGODB=mongos
+      - MONGOHOST=mongodb
     ports:
       - "8080:8080"
     networks:
